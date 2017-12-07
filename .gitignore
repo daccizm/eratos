@@ -1,0 +1,6 @@
+.ruby-version
+.rubocop.yml
+
+.bundle/
+
+vendor/bundle/
