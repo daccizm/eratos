@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-require 'benchmark'
-
 # Eratos Class
 class Eratos
   MINIMUM_PRIME = 2
