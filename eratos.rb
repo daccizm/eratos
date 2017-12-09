@@ -8,16 +8,16 @@ class Eratos
 
   # 与えられた整数以下の素数を返却する
   #
-  # @param [String] num 整数
+  # @param [Integer] num 整数
   # @return [Array] num 以下の素数
   #
   def self.prime_numbers_from(num)
     return "#{MINIMUM_PRIME} 以上の整数を入力してください。" unless valid?(num)
 
-    consecutives = [*MINIMUM_PRIME..num.to_i]
+    consecutives = [*MINIMUM_PRIME..num]
     primes = []
 
-    while Math.sqrt(num.to_i) > consecutives.first
+    while Math.sqrt(num) >= consecutives.first
       primes.push consecutives.first
       multiples = multiples_of(consecutives.first, consecutives.last)
       consecutives -= multiples
@@ -28,11 +28,11 @@ class Eratos
 
   # バリデーション
   #
-  # @param [String] num 整数
+  # @param [Integer] num 整数
   # @return [Boolean] バリデーション結果
   #
   def self.valid?(num)
-    num =~ /^[0-9]+$/ && num.to_i >= MINIMUM_PRIME
+    num.to_s =~ /^[0-9]+$/ && num >= MINIMUM_PRIME
   end
 
   # 整数の倍数
@@ -50,4 +50,4 @@ class Eratos
   private_class_method :valid?, :multiples_of
 end
 
-p Eratos.prime_numbers_from(ARGV[0])
+p Eratos.prime_numbers_from(ARGV[0].to_i)
