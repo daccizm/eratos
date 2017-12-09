@@ -9,9 +9,7 @@ describe Eratos do
         message = '2 以上の整数を入力してください。'
         expect(Eratos.prime_numbers_from('a')).to eq message
         expect(Eratos.prime_numbers_from(2.1)).to eq message
-        expect(Eratos.prime_numbers_from(0)).to eq message
         expect(Eratos.prime_numbers_from(-0.1)).to eq message
-        expect(Eratos.prime_numbers_from(-1)).to eq message
       end
     end
 
